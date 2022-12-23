@@ -1,5 +1,39 @@
 # linux commands reference  
+## prompt / if / for / while / case 
+## basic commands
+- hardware
+  - dmidecode / fdisk / lspci / lshw / dmesg
+- system
+  - uname / hostnamectl / shutdown / reboot / uptime / service / systemctl / su / sudo / getenforce / journalctl
+- time
+  - date / timedatectl / localectl / chronyc
+- package manage
+  - rpm / dpkg / yum / dnf
+- storage
+  - pvdisplay / lvdisplay / df / (u)mount / fuse / lsblk
+- directory control
+  - pwd / cd / mkdir / rmdir / ls / du
+- file control
+  - file / cat / head / tail / vi / view / less / more / find / rm / tee / (un)zip
+- process
+  - crontab / grep / awk / sed / tr / cut / wc / diff / sort / unique
+- network control
+  - ip / traceroute / tcpdump / nc / nmap / ss / netstat
+- DNS
+  - nslookup / dig / whois
+- web
+  - curl / wget
+- shell
+  - ssh / export / sh / xargs / eval
+## unit test shell
+## server_build
+- Web
+- NFS(NFS/CIFS)
+- DB
+- DNS
+- LDAP
 
+## prompt
 if prompt displays "sh-4.2 $" (ex. Amazon EC2)  
 ```
 export PS1="[\u@\h \W] $ "
@@ -38,6 +72,9 @@ for i in $A; do echo "### $i ###"; echo "hello $i "; done
 ## while
 ```
 while :; do ls -l;sleep 2;echo; done
+```
+```
+echo -e "aaa\nbbb" |while read line; do echo "### ${line} ###"; done
 ```
 ## case
 ```
