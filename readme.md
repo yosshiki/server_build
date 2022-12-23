@@ -4,7 +4,7 @@
 - hardware
   - dmidecode / fdisk / lspci / lshw / dmesg
 - system
-  - uname / hostnamectl / shutdown / reboot / uptime / service / systemctl / su / sudo / getenforce / journalctl
+  - uname / hostnamectl / shutdown / reboot / uptime / service / systemctl / su / sudo / getenforce / journalctl / sosreport
 - time
   - date / timedatectl / localectl / chronyc
 - package manage
@@ -14,7 +14,7 @@
 - directory control
   - pwd / cd / mkdir / rmdir / ls / du
 - file control
-  - file / cat / head / tail / vi / view / less / more / find / rm / tee / (un)zip
+  - file / cat / head / tail / vi / view / less / more / find / rm / tee / (un)zip / chmod / 
 - process
   - crontab / grep / awk / sed / tr / cut / wc / diff / sort / unique
 - network control
@@ -88,4 +88,11 @@ esac
 ```
 ```
 case $A in "a") echo A ;; "b") echo B ;; esac
+```
+## comment out
+```
+<< COMMENTOUT
+echo "Hi, Jiro!"
+echo "Hi, Saburo!"
+COMMENTOUT
 ```
