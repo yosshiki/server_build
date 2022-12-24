@@ -18,7 +18,7 @@
 - process
   - crontab / grep / awk / sed / tr / cut / wc / diff / sort / unique
 - network control
-  - ip / traceroute / tcpdump / nc / nmap / ss / netstat
+  - ip / traceroute / tcpdump / nc / nmap / ss / netstat / nmap
 - DNS
   - nslookup / dig / whois
 - web
