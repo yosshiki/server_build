@@ -51,9 +51,9 @@ if [ $A = "B" ]; then
   echo "hello, world."
 fi
 ```
+hello, world.
 ```
 if [ $A = "B" ]; then echo "hello, world."; fi
-
 ```
 ## for
 ```
@@ -69,13 +69,34 @@ done
 ```
 for i in $A; do echo "### $i ###"; echo "hello $i "; done
 ```
+\### a ###  
+hello a  
+\### b ###   
+hello b  
+\### c ###  
+hello c  
+
 ## while
+monitor command result with log ≒ watch
 ```
 while :; do ls -l;sleep 2;echo; done
 ```
+### if line with space
+```
+COMMAND | while read line; do echo ${line}; done
+```
+```
+echo "aaa bbb  
+ccc" | while read line; do echo ${line}; done
+```
+aaa bbb  
+ccc
+
 ```
 echo -e "aaa\nbbb" |while read line; do echo "### ${line} ###"; done
 ```
+\### aaa ###  
+\### bbb ###
 ## case
 ```
 A=a
@@ -86,9 +107,11 @@ case $A in
         echo B ;;
 esac
 ```
+A  
 ```
-case $A in "a") echo A ;; "b") echo B ;; esac
+A=b;case $A in "a") echo A ;; "b") echo B ;; esac
 ```
+B  
 ## comment out
 ```
 << COMMENTOUT
@@ -96,3 +119,4 @@ echo "Hi, Jiro!"
 echo "Hi, Saburo!"
 COMMENTOUT
 ```
+(no output)
