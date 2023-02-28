@@ -1,5 +1,5 @@
 # linux commands reference  
-## prompt / if / for / while / case 
+## prompt / if / for / while / case / select
 ## basic commands
 - hardware
   - dmidecode / fdisk / lspci / lshw / dmesg
@@ -120,3 +120,30 @@ echo "Hi, Saburo!"
 COMMENTOUT
 ```
 (no output)
+
+## select
+```
+echo '#!/bin/bash
+# single columned
+COLUMN=1
+PS3="select your answer: "
+select VAR in "aaa AAA" \
+"bbb BBB" \
+"ccc CCC" \
+"ddd DDD" \
+"eee EEE"
+do
+    echo ${REPLY}")" ${VAR}
+    exit
+done' > select.sh
+chmod 755 select.sh
+./select.sh
+```
+1\) aaa AAA  
+2\) bbb BBB  
+3\) ccc CCC  
+4\) ddd DDD  
+5\) eee EEE  
+select your answer: 2  
+2\) bbb BBB  
+
