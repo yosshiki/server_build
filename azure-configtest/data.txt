@@ -1,0 +1,2 @@
+az mysql server list -o table
+az mysql flexible-server list -o table
