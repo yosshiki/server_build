@@ -1,0 +1,13 @@
+az network vnet list -o table
+az network public-ip list -o table
+az network route-table list -o table
+az network private-endpoint list -o table
+az network application-gateway list -o table
+az dns-resolver list -o table
+az dns-resolver forwarding-ruleset list -o table
+az dns-resolver forwarding-ruleset list -o tsv --query [].[name,resourceGroup]  | while read line; do echo "### $line ###"; RULESET=`echo $line|awk '$0=$1'`; RG=`echo $line|awk '$0=$2'`; az dns-resolver forwarding-rule list --ruleset-name $RULESET -g $RG -o table ; done
+az network vnet list -o tsv --query [].[name,resourceGroup] | while read line; do echo "### $line ###"; VNET=`echo $line|awk '$0=$1'`; RG=`echo $line|awk '$0=$2'`; az network vnet peering list --vnet-name ${VNET} -g ${RG} -o table; az network vnet subnet list --vnet-name ${VNET} -g ${RG} -o table; done
+az network private-dns zone list -o table
+az network private-dns zone list -o tsv --query [].[name,resourceGroup] | while read line; do echo "### $line ###"; ZONE=`echo $line|awk '$0=$1'`; RG=`echo $line|awk '$0=$2'`; az network private-dns record-set list -o table -z ${ZONE} -g ${RG}; done
+az network nsg list -o table
+az network nsg list -o tsv --query [].[name,resourceGroup] | while read line; do echo "### $line ###"; NSG=`echo $line|awk '$0=$1'`; RG=`echo $line|awk '$0=$2'`;az network nsg rule list -o table -g $RG; done
