@@ -7,7 +7,7 @@
 !#/bin/bash
 TIME=`date +%Y%m%d%H%M`
 CATEGORY=(subscription resource id_role network webapp data compute monitor)
-OUTPUT_DIR=./azure_configtest_result_$TIME
+OUTPUT_DIR=${HOME}/azure-configtest/result_$TIME
 
 NUMSEC=0
 NUMLINE=0
@@ -16,7 +16,7 @@ SUB=`az account show -o tsv --query name`
 
 for i in  ${!CATEGORY[@]}
 do
-  exec <./$i.txt
+  exec <./${CATEGORY[$i]}.txt
   while read line;
     do
         echo "############### $SUB $NUMSEC-$NUMLINE.[$line] ################" | tee -a  $OUTPUT_DIR/`eval echo ${CATEGORY[$i]}_result.txt`;
