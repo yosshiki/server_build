@@ -1,2 +1,5 @@
 az mysql server list -o table
 az mysql flexible-server list -o table
+az keyvault list -o table
+az storage account list -o table
+az storage account list -o table --query [].[name, networkRuleSet.ipRules[].ipAddressOrRange]
