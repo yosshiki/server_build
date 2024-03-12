@@ -1,0 +1,4 @@
+az ad app list --show-mine -o table
+az ad sp list --show-mine -o table
+az identity list -o table
+az role assignment list -o table --all --include-classicadministrator
