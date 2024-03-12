@@ -1,0 +1,3 @@
+az monitor log-analytics workspace list -o table
+az monitor action-group list -o table
+az monitor alert-processing-rule list -o table
