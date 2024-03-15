@@ -1,1 +1,5 @@
 az account show -o tsv --query [name,id]
+az group list -o table
+az group list
+az resource list -o table
+az resource list
